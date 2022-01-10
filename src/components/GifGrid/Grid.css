@@ -2,6 +2,7 @@
   --gridList-column: 250px;
   --gridList-rows: 250px;
   --gridList-gap: 6px;
+  --results-colums: 2;
 }
 
 .GifGrid {
@@ -15,6 +16,8 @@
   grid-gap: var(--gridList-gap, 6px);
   gap: var(--gridList-gap, 6px);
   align-items: center;
+  column-count: var(--results-colums);
+  column-gap: 5em;
 }
 
 @media screen and (min-width: 37.5rem) {

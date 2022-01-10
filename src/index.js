@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Route } from 'wouter';
-import GifGrid from './components/GifGrid';
+import GifGrid from './components/GifGrid/GifGrid';
 import './index.css';
 import Home from './Pages/home';
 

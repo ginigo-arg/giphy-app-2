@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import Gift from "./Gif"
+import Gift from "../Gif/Gif"
 import './Grid.css'
-import { getGifs } from '../services/getGifs'
+import { getGifs } from '../../services/getGifs'
 
 const GifGrid = ( {params} ) => {
 

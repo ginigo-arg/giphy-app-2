@@ -1,5 +1,5 @@
 import { useState } from "react";
-import {Link} from "wouter";
+import {Link, useLocation} from "wouter";
 
 
 const POPULAR_GIFS = ["Matrix", "Programming", "Panda", "bull terrier"]
@@ -8,11 +8,14 @@ const POPULAR_GIFS = ["Matrix", "Programming", "Panda", "bull terrier"]
 export default function Home() {
 
     const [keyword, setkeyword] = useState('')
+    const [path, pushLocation] = useLocation()
 
     const handleSubmit = (e) => {
         //navegar a otra ruta
         e.preventDefault()
+        pushLocation(`/search/${keyword}`)
         console.log(keyword)
+        setkeyword('')
     }
     const handleChange = (e) => {
         setkeyword(e.target.value)
