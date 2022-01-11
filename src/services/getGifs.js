@@ -1,11 +1,12 @@
 import axios from 'axios'
+import { API_URL, API_KEY } from './setting'
+
  
 export const getGifs = async ( {keyword} ) => {
 
-    const ApyKey = 'ypKCXe1Tme0yWmLGNEbfitQhQvJh33Ls'
-    const URL = `https://api.giphy.com/v1/gifs/search?api_key=${ApyKey}&q=${keyword}&limit=10`
+    const apiURL = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=15`
 
-    const resp = await axios (URL)
+    const resp = await axios (apiURL)
     const {data} = resp.data 
      
     const gifs = data.map(item => {

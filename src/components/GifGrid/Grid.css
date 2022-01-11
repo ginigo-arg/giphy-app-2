@@ -1,8 +1,7 @@
 :root {
-  --gridList-column: 120px;
-  --gridList-rows: 120px;
+  --gridList-column: 250px;
+  --gridList-rows: 250px;
   --gridList-gap: 6px;
-  --results-colums: 2;
 }
 
 .GifGrid {
@@ -15,18 +14,16 @@
   grid-gap: var(--gridList-gap, 6px);
   gap: var(--gridList-gap, 6px);
   align-items: center;
-  column-count: var(--results-colums);
-  column-gap: 5em;
 }
 
-@media screen and (min-width: 37.5rem) {
+@media screen and (min-width: 600px) {
   :root {
-    --gridList-column: 200px;
-    --gridList-rows: 280px;
+    --gridList-column: 180px;
+    --gridList-rows: 200px;
   }
 }
 
-@media screen and (min-width: 60rem) {
+@media screen and (min-width: 960px) {
   :root {
     --gridList-column: 300px;
     --gridList-rows: 210px;

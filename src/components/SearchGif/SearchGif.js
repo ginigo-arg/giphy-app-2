@@ -1,5 +1,6 @@
 import React, {useState} from "react"
 import {useLocation} from "wouter";
+import './search.css'
   
 export default function SearchGif () {
     
@@ -19,15 +20,16 @@ const handleChange = (e) => {
 
 
     return (
-        <div>
-        <form onSubmit={handleSubmit}>
+        
+        <form onSubmit={handleSubmit} className="searchGifs">
             <input onChange={handleChange}
             type='text'
             value={keyword}
-            placeholder="Buscar Gif..."/>
-            <button>Buscar</button>
+            placeholder="Buscar Gif..."
+            className="search-input"/>
+            <button className="search-btn">Buscar</button>
         </form>
-        </div>
+        
     )
 }
 

@@ -1,10 +1,11 @@
 import {Link} from "wouter";
 import GifGrid from "../../components/GifGrid/GifGrid";
 import SearchGif from "../../components/SearchGif/SearchGif";
-import SearchResults from "../SerchResults";
 import useGifs from "../../Hooks/useGifs";
+import '../../App.css'
+import {Helmet} from "react-helmet"
+import TrendingSearches from "../../components/TrendingSearches/TrendingSearches";
 
-const POPULAR_GIFS = ["Matrix", "Programming", "Panda", "bull terrier"]
 
 
 export default function Home() {
@@ -12,19 +13,26 @@ export default function Home() {
 
     const {loading, gifs} = useGifs()
     return (
-        <>   
-            <SearchGif/>
-            <h3 className="App-title">Ultima Busqueda</h3>
-            <GifGrid gifs={gifs} />
-            <ul>
-                {
-                    POPULAR_GIFS.map((popularGif)=> (
-                        <li key={popularGif}>
-                            <Link to={`/search/${popularGif}`} >Gifs de {popularGif}</Link>
-                        </li>
-                    ))
-                }
-            </ul>
+        <>
+        <Helmet>
+            <title>Home | Giffy</title>
+        </Helmet>
+        <header className="0-header">
+        <SearchGif/>
+        </header>
+
+        <div className="App-wrapper">
+            <div className="App-main">
+                <div className="App-results">
+                    <h3 className="App-title">Ultima Busqueda</h3>
+                    <GifGrid gifs={gifs} />
+                    
+                </div>
+                <div className="App-category">
+                   <TrendingSearches/>           
+                </div>
+            </div>
+        </div>
         </>
     )
 }
