@@ -1,7 +1,7 @@
  import {useEffect, useState} from 'react'   
  import { getGifs } from '../services/getGifs'
  
- export function useGifs ({keyword}) {
+ export default function useGifs ({keyword}) {
 
       const [loading, setloading] = useState(false)
       const [gifs, setgifs] = useState([])
@@ -9,10 +9,15 @@
   
       useEffect( function () {
           setloading(true)
-          getGifs({keyword})
+          //recuperamos la keyword
+          const keywordToUse = keyword || localStorage.getItem('lastKeyword') || 'random'
+          getGifs({keyword: keywordToUse})
           .then(gifs => {
               setgifs(gifs)
-              setgifs(false)
+              setloading(false)
+              //Guardamos la keyword
+              localStorage.setItem('lastKeyword', keyword)
+
           })
           
       }, [keyword])
