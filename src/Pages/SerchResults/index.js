@@ -5,7 +5,6 @@ import GifGrid from "../../components/GifGrid/GifGrid";
 
 export default function SearchResults ({params}) {
   const {keyword} = params
-  console.log(params)
   const {loading, gifs} = useGifs({keyword})
 
     return <>

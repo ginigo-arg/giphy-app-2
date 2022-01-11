@@ -1,36 +1,21 @@
-import { useState } from "react";
-import {Link, useLocation} from "wouter";
-
+import {Link} from "wouter";
+import GifGrid from "../../components/GifGrid/GifGrid";
+import SearchGif from "../../components/SearchGif/SearchGif";
+import SearchResults from "../SerchResults";
+import useGifs from "../../Hooks/useGifs";
 
 const POPULAR_GIFS = ["Matrix", "Programming", "Panda", "bull terrier"]
 
 
 export default function Home() {
 
-    const [keyword, setkeyword] = useState('')
-    const [path, pushLocation] = useLocation()
 
-    const handleSubmit = (e) => {
-        //navegar a otra ruta
-        e.preventDefault()
-        pushLocation(`/search/${keyword}`)
-        console.log(keyword)
-        setkeyword('')
-    }
-    const handleChange = (e) => {
-        setkeyword(e.target.value)
-    }
-
-
+    const {loading, gifs} = useGifs()
     return (
-        <>
-            <h3>Gifs mas buscados</h3>
-        <form onSubmit={handleSubmit}>
-            <input onChange={handleChange}
-            type='text'
-            value={keyword}
-            placeholder="Buscar Gif..."/>
-        </form>
+        <>   
+            <SearchGif/>
+            <h3 className="App-title">Ultima Busqueda</h3>
+            <GifGrid gifs={gifs} />
             <ul>
                 {
                     POPULAR_GIFS.map((popularGif)=> (

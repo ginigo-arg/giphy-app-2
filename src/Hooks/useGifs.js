@@ -1,7 +1,7 @@
  import {useEffect, useState} from 'react'   
  import { getGifs } from '../services/getGifs'
  
- export default function useGifs ({keyword}) {
+ export default function useGifs ({keyword} = {keyword: null}) {
 
       const [loading, setloading] = useState(false)
       const [gifs, setgifs] = useState([])

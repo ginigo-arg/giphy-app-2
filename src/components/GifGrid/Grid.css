@@ -1,12 +1,11 @@
 :root {
-  --gridList-column: 250px;
-  --gridList-rows: 250px;
+  --gridList-column: 120px;
+  --gridList-rows: 120px;
   --gridList-gap: 6px;
   --results-colums: 2;
 }
 
 .GifGrid {
-  margin-top: 100px;
   display: grid;
   min-height: 100vh;
   grid-template-columns: repeat(auto-fit, minmax(var(--gridList-column), 1fr));

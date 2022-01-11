@@ -1,13 +1,15 @@
 import React from "react";
+import { Link } from "wouter";
 import './Gif.css'
 
 export default function Gift ({url, title, id}) {
     return (
-        <a href={`#${id}`} key={url} className="Gif">
-            <img alt={title} src={url} />
-            <h4>{title}</h4>
-            <span>{id}</span>
-        </a>
+        <div className="Gif">
+            <Link to={`/gif/${id}`} className="Gif-link">
+            <h4>{title}</h4>     
+            <img loading='lazy' alt={title} src={url} />
+            </Link>
+        </div>
         
     )
 }
