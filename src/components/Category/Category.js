@@ -3,8 +3,6 @@ import { Link } from 'wouter'
 import './Category.css'
 
 export default function Category({ name, trends = [], ...props }) {
-    console.log('Trends de category', trends)
-    console.log('props.name', props.className )
     return <div className={props.className}>
         <h3 className="Category-title">{name}</h3>
         <ul className="Category-list">
