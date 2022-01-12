@@ -17,3 +17,24 @@ export default function TrendingSearches ()  {
 }
 
 
+function LazyTrending () {
+
+    const [show, setShow] = useState(false)
+
+    useEffect(function () {
+
+        const onChange = (entries) => {
+            console.log(entries)
+            const el = entries[0]
+            console.log(el)
+        }
+        const observer = new IntersectionObserver(onchange, {
+            rootMargin: '100px'
+        })
+        observer.observe(document.getElementById('LazyTrendings'))        
+    },[])
+
+    return <div id="LazyTending">
+        {show ? <TrendingSearches/> : null}
+    </div>
+}

@@ -11,7 +11,11 @@ export default function SearchResults ({params}) {
         {
          loading
          ? <Spinner/>
-         : <GifGrid gifs={gifs}/>       
+         : <>
+         <h3 className="App-title">{decodeURI(keyword)}</h3>
+         <GifGrid gifs={gifs}/>       
+         </>
         }
+
         </>
 }

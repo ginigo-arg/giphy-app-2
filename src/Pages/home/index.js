@@ -1,10 +1,9 @@
-import {Link} from "wouter";
-import GifGrid from "../../components/GifGrid/GifGrid";
-import SearchGif from "../../components/SearchGif/SearchGif";
-import useGifs from "../../Hooks/useGifs";
-import '../../App.css'
+import GifGrid from "components/GifGrid/GifGrid";
+import SearchGif from "components/SearchGif/SearchGif";
+import useGifs from "Hooks/useGifs";
+import 'App.css'
 import {Helmet} from "react-helmet"
-import TrendingSearches from "../../components/TrendingSearches/TrendingSearches";
+import TrendingSearches from "components/TrendingSearches/TrendingSearches";
 
 
 

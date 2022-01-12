@@ -7,7 +7,7 @@ import Detail from "./Pages/detail/index"
 import  {GifsContextProvider}  from "./context/GifsContext"
 import Logo from './logo-app.png'
 import './App.css'
-
+                                    
 export default function App (){
     return (
     <StaticContext.Provider value={{name:'Gabudev',
