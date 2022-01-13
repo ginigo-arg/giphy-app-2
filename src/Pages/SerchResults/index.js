@@ -5,7 +5,11 @@ import GifGrid from "../../components/GifGrid/GifGrid";
 
 export default function SearchResults ({params}) {
   const {keyword} = params
-  const {loading, gifs} = useGifs({keyword})
+  const {loading, gifs, setPage} = useGifs({keyword})
+
+  const handleNextPage = () => {
+    setPage(prevPage => prevPage + 1)
+  }
 
     return <>
         {
@@ -16,6 +20,8 @@ export default function SearchResults ({params}) {
          <GifGrid gifs={gifs}/>       
          </>
         }
+        <br/>
+        <button onClick={handleNextPage}>Next Page</button>
 
         </>
 }
