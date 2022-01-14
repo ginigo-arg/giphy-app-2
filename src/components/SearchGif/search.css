@@ -14,7 +14,7 @@
 .search-btn:hover {
   background: var(--brand-color_2);
   cursor: pointer;
-  transition: all 0.3s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 .search-input {

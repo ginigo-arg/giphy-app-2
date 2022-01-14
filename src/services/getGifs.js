@@ -2,7 +2,7 @@ import axios from 'axios'
 import { API_URL, API_KEY } from './setting'
 
  
-export const getGifs = async ( {keyword = 'morty', limit=25, page=0}  = {} ) => {
+export const getGifs = async ( {keyword = 'morty', limit=5, page=0}  = {} ) => {
 
     const apiURL = `${API_URL}/gifs/search?api_key=${API_KEY}&q=${keyword}&limit=${limit}&offset=${page * limit}&rating=G&lang=en`
 

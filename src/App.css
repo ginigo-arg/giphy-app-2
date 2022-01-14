@@ -54,6 +54,10 @@
   width: 100%;
 }
 
+.link-to-home:hover {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 55rem) {
   .App-main {
     flex-direction: initial;

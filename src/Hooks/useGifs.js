@@ -28,13 +28,13 @@
           
       }, [keyword, setGifs, keywordToUse])
 
-
+      //useffect para realizar la paginacion con boton.
       useEffect(() => {
          if(page === INITIAL_PAGE) return
          setLoadingNextPage(true)
          getGifs({ keyword: keywordToUse, page})
          .then(nextGifs => {
-            setGifs(nextGifs)
+            setGifs(prevGifs => prevGifs.concat(nextGifs))
             setLoadingNextPage(false)
          }) 
       }, [keywordToUse,page, setGifs])

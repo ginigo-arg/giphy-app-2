@@ -5,7 +5,7 @@ import SearchResults from "./Pages/SerchResults"
 import StaticContext from './context/StaticContext'
 import Detail from "./Pages/detail/index"
 import  {GifsContextProvider}  from "./context/GifsContext"
-import Logo from './logo-app.png'
+import Logo from './logo-app2.png'
 import './App.css'
                                     
 export default function App (){
@@ -15,7 +15,7 @@ export default function App (){
         <div className="App">
             <Suspense fallback={null}/>
         <section className="App-content">
-            <Link to='/'>
+            <Link to='/' className="link-to-home">
             <figure className="App-logo">
                 <img alt='Giffi logo' src={Logo}/>
             </figure>
