@@ -4,6 +4,7 @@ import Spinner from "../../components/Spinner/index";
 import GifGrid from "../../components/GifGrid/GifGrid";
 import useNearScreen from "Hooks/useNearScreen";
 import debounce from "just-debounce-it";
+import Helmet from "react-helmet";
 
 export default function SearchResults ({params}) {
   const {keyword} = params
@@ -14,6 +15,8 @@ export default function SearchResults ({params}) {
     once: false
   })
  
+
+  const title = gifs ? `${gifs.length} resultados de ${keyword}` : '' 
   //funcion para mostrar los sig. resultados concatenando los que ya existian.
   // const handleNextPage = () => {
   //   setPage(prevPage => prevPage + 1)
@@ -31,6 +34,9 @@ export default function SearchResults ({params}) {
   },[debounceHandleNextPage, isNearScreen])
 
     return <>
+        <Helmet>
+            <title>{title}</title>
+        </Helmet>
         {
          loading
          ? <Spinner/>
