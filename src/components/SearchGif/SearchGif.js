@@ -33,4 +33,4 @@ const handleChange = (e) => {
     )
 }
 
-export default React.memo(SearchGif, [SearchGif])
+export default React.memo(SearchGif)
